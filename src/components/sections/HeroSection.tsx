@@ -41,17 +41,14 @@ export default function HeroSection() {
         {/* Video Player */}
         <div className="w-full max-w-2xl mx-auto">
           <div className="aspect-video rounded-lg overflow-hidden">
-            <video
-              src="/assets/video.mp4"
-              controls
-              autoPlay
-              muted
-              playsInline
+            <iframe
+              src="https://www.youtube.com/embed/P3dHt_gTgCI?autoplay=1&mute=1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              frameBorder="0"
               className="w-full h-full object-cover rounded-lg"
-              poster=""
-            >
-              Trình duyệt của bạn không hỗ trợ video.
-            </video>
+              title="YouTube video player"
+            ></iframe>
           </div>
         </div>
 
