@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer"
 import { Button } from "@/components/ui/button"
 import HeroSection from "@/components/sections/HeroSection"
 import FeatureSection from "@/components/sections/FeatureSection"
-import TrailerSection from "@/components/sections/TrailerSection"
 import ScreenshotsSection from "@/components/sections/ScreenshotsSection"
 import CharactersSection from "@/components/sections/CharactersSection"
 
@@ -59,7 +58,7 @@ export default function HomePageContent() {
       <PageTransition>
         <CharactersSection />
       </PageTransition>
-      <TrailerSection />
+
       <ScreenshotsSection />
     </main>
   );

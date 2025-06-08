@@ -7,6 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <div className="w-6 h-6 bg-red-600 rounded"></div>
+            <p className="text-red-600 text-2xl font-bold">Manax Studio</p>
           </div>
           <div className="flex space-x-4">
             <Facebook className="w-5 h-5 text-gray-400 hover:text-red-400 cursor-pointer transition-colors" />

@@ -1,9 +1,8 @@
-'use client'    
+'use client'
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-// Extend the character type with more details
 interface Character {
   name: string;
   src: string;
@@ -15,7 +14,7 @@ interface Character {
 
 const characters: Character[] = [
   { 
-    name: 'Bé Hoa', 
+    name: 'BÉ HOA', 
     src: '/assets/characters/bé Hoa.png',
     age: '8 tuổi',
     height: '1m30',
@@ -23,7 +22,7 @@ const characters: Character[] = [
     appearance: 'Tóc đen buộc 2 bên, mặc váy màu hồng, hay cười'
   },
   { 
-    name: 'Bố Đăng', 
+    name: 'BỐ ĐĂNG', 
     src: '/assets/characters/bố Đăng.png',
     age: '45 tuổi',
     height: '1m75',
@@ -31,7 +30,7 @@ const characters: Character[] = [
     appearance: 'Tóc đen ngắn, mặc áo sơ mi, dáng người cao'
   },
   { 
-    name: 'Đăng', 
+    name: 'ĐĂNG', 
     src: '/assets/characters/Đăng.png',
     age: '12 tuổi',
     height: '1m45',
@@ -39,7 +38,7 @@ const characters: Character[] = [
     appearance: 'Tóc đen, mặc áo phông và quần jean'
   },
   { 
-    name: 'Dì Liễu', 
+    name: 'DÌ LIỄU', 
     src: '/assets/characters/dì Liễu.png',
     age: '40 tuổi',
     height: '1m65',
@@ -47,7 +46,7 @@ const characters: Character[] = [
     appearance: 'Tóc đen dài, mặc áo dài truyền thống'
   },
   { 
-    name: 'Mẹ Đăng', 
+    name: 'MẸ ĐĂNG', 
     src: '/assets/characters/mẹ Đăng.png',
     age: '42 tuổi',
     height: '1m65',
@@ -56,49 +55,48 @@ const characters: Character[] = [
   },
 ];
 
-export default function CharactersSection() {
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+export default function CharacterProfile() {
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>(characters[0]);
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Characters</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {characters.map((character) => (
-            <div 
-              key={character.name} 
-              className="flex flex-col items-center cursor-pointer"
-              onClick={() => setSelectedCharacter(character)}
-            >
-              <div className="w-[200px] h-[476px] flex items-center justify-center overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:brightness-110">
-                <Image
-                  src={character.src}
-                  alt={character.name}
-                  width={200}
-                  height={476}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <p className="mt-4 text-lg font-semibold">{character.name}</p>
-            </div>
-          ))}
+    <div className="min-h-screen bg-[#fff2d7]">
+      {/* Header */}
+      <div className="bg-[#fff2d7] border-b-2 border-amber-400">
+        <div className="container mx-auto px-4 py-6">
+          <h1 className="text-4xl font-bold text-center text-amber-800">
+            PROFILE
+          </h1>
         </div>
       </div>
 
-      {/* Custom Modal */}
-      {selectedCharacter && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 max-w-4xl w-full rounded-lg overflow-hidden relative">
-            {/* Close button */}
-            <button 
-              onClick={() => setSelectedCharacter(null)}
-              className="absolute right-4 top-4 text-white hover:text-gray-300 z-10"
-            >
-              ✕
-            </button>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
-              <div className="relative h-[500px]">
+      {/* Character Selection Tabs */}
+      <div className="bg-amber-50 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-2 py-4">
+            {characters.map((character) => (
+              <button
+                key={character.name}
+                onClick={() => setSelectedCharacter(character)}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                  selectedCharacter.name === character.name
+                    ? 'bg-red-600 text-white shadow-lg'
+                    : 'bg-red-500 text-white hover:bg-red-700'
+                }`}
+              >
+                {character.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Profile Content - Layout giống hình mẫu */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Left side - Character Image */}
+            <div className="bg-gradient-to-b from-yellow-100 to-amber-100 p-8 flex flex-col items-center justify-center">
+              <div className="relative w-[300px] h-[400px] mb-6">
                 <Image
                   src={selectedCharacter.src}
                   alt={selectedCharacter.name}
@@ -106,19 +104,72 @@ export default function CharactersSection() {
                   className="object-contain"
                 />
               </div>
-              <div className="space-y-4">
-                <h3 className="text-3xl font-bold text-red-400">{selectedCharacter.name}</h3>
-                <div className="space-y-2">
-                  <p><span className="font-semibold">Tuổi:</span> {selectedCharacter.age}</p>
-                  <p><span className="font-semibold">Chiều cao:</span> {selectedCharacter.height}</p>
-                  <p><span className="font-semibold">Tính cách:</span> {selectedCharacter.personality}</p>
-                  <p><span className="font-semibold">Ngoại hình:</span> {selectedCharacter.appearance}</p>
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-amber-800 mb-2">
+                  {selectedCharacter.name}
+                </h2>
+                <div className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  CHARACTERS
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Character Details */}
+            <div className="p-8 bg-white">
+              <div className="space-y-6">
+                <div className="border-l-4 border-amber-700 pl-4">
+                  <h3 className="text-2xl font-bold text-amber-800 mb-4">
+                    PROFILE DETAILS
+                  </h3>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-lg">
+                    <div className="w-2 h-2 bg-amber-700 rounded-full mt-2"></div>
+                    <div>
+                      <span className="font-bold text-gray-700">Tuổi：</span>
+                      <span className="text-gray-600">{selectedCharacter.age}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-lg">
+                    <div className="w-2 h-2 bg-amber-700 rounded-full mt-2"></div>
+                    <div>
+                      <span className="font-bold text-gray-700">Chiều cao：</span>
+                      <span className="text-gray-600">{selectedCharacter.height}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-lg">
+                    <div className="w-2 h-2 bg-amber-700 rounded-full mt-2"></div>
+                    <div>
+                      <span className="font-bold text-gray-700">Tính cách：</span>
+                      <span className="text-gray-600">{selectedCharacter.personality}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-lg">
+                    <div className="w-2 h-2 bg-amber-700 rounded-full mt-2"></div>
+                    <div>
+                      <span className="font-bold text-gray-700">Ngoại hình：</span>
+                      <span className="text-gray-600">{selectedCharacter.appearance}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative element */}
+                <div className="mt-8 text-center">
+                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+                    <span className="text-white">★</span>
+                    <span className="font-bold">CHARACTER CARDS</span>
+                    <span className="text-white">★</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
-    </section>
+      </div>
+    </div>
   );
 }

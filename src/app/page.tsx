@@ -4,20 +4,23 @@ import FeatureSection from "@/components/sections/FeatureSection"
 import TrailerSection from "@/components/sections/TrailerSection"
 import ScreenshotsSection from "@/components/sections/ScreenshotsSection"
 import CharactersSection from "@/components/sections/CharactersSection"
+import WishlistSection from "@/components/sections/WishlistSection"
+import ContactSection from "@/components/sections/ContactSection"
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <HeroSection />
       <FeatureSection 
-        title="Explore the Lost Soul"
-        description="Embark on an epic journey through a mysterious world filled with ancient secrets and powerful magic."
+        title="Đánh thức linh hồn lạc lối"
+        description="Bạn đã sẵn sàng đánh thức những bí ẩn bị lãng quên?"
         imageSrc="/assets/poster.png"
         imageAlt="Gameplay screenshot"
       />
       <CharactersSection />
-      <TrailerSection />
+      <WishlistSection />
       <ScreenshotsSection />
-      
+      <ContactSection />
     </main>
   )
 } 
