@@ -16,7 +16,7 @@ export default function GameGallery() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-[#fff2d7] text-gray-800">
       <HeroSection />
 
       <div className="max-w-7xl mx-auto px-6 py-8 flex gap-8">

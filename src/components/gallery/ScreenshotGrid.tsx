@@ -29,7 +29,7 @@ export default function ScreenshotGrid({ selectedCategory, visibleScreenshots, l
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {searchedAndFilteredScreenshots.slice(0, visibleScreenshots).map((screenshot) => (
           <Link key={screenshot.id} href={`/gallery/${screenshot.id}?category=${selectedCategory}`}>
-            <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:bg-gray-750 transition-colors cursor-pointer group">
+            <Card className="bg-white border-red-200 overflow-hidden hover:bg-red-50 transition-colors cursor-pointer group">
               <div className="relative">
                 <Image
                   src={screenshot.image || "/placeholder.svg"}
@@ -38,11 +38,11 @@ export default function ScreenshotGrid({ selectedCategory, visibleScreenshots, l
                   height={200}
                   className="w-full h-48 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-white mb-1">{screenshot.title}</h3>
-                <p className="text-xs text-gray-400 uppercase tracking-wide">{screenshot.category}</p>
+                <h3 className="font-semibold text-gray-800 mb-1">{screenshot.title}</h3>
+                <p className="text-xs text-red-600 uppercase tracking-wide">{screenshot.category}</p>
               </CardContent>
             </Card>
           </Link>
@@ -54,7 +54,7 @@ export default function ScreenshotGrid({ selectedCategory, visibleScreenshots, l
           <Button
             onClick={loadMoreScreenshots}
             variant="outline"
-            className="border-gray-600 text-white hover:bg-gray-800"
+            className="border-gray-600 bg-red-500 text-white hover:bg-red-700 hover:text-white"
           >
             LOAD MORE SCREENSHOTS
           </Button>

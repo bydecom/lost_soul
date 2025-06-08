@@ -60,18 +60,18 @@ export default function ImageModal({ imageId }: ImageModalProps) {
       className="fixed inset-0 z-50 bg-black/90 flex flex-col"
       onClick={handleBackdropClick}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 bg-gray-900 shadow-md border-b border-gray-800 rounded-t-lg">
+      {/* Header - Màu nền trắng */}
+      <div className="flex items-center justify-between px-6 py-4 bg-white shadow-md border-b border-red-200 rounded-t-lg">
         <div className="flex items-center space-x-4">
           <button
             onClick={handleClose}
-            className="p-2 hover:bg-gray-800 rounded-full transition-colors border border-gray-700"
+            className="p-2 hover:bg-red-50 rounded-full transition-colors border border-red-200"
             aria-label="Đóng"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-6 h-6 text-red-600" />
           </button>
-          <h2 className="text-2xl font-bold text-white drop-shadow-sm">{image.title}</h2>
-          <span className="px-3 py-1 text-xs font-semibold bg-gray-800 text-gray-200 rounded-full border border-gray-700">
+          <h2 className="text-2xl font-bold text-red-600">{image.title}</h2>
+          <span className="px-3 py-1 text-xs font-semibold bg-red-50 text-red-600 rounded-full border border-red-200">
             {image.category}
           </span>
         </div>
@@ -81,14 +81,14 @@ export default function ImageModal({ imageId }: ImageModalProps) {
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center border border-gray-700 hover:bg-gray-800 rounded-md px-4 py-2 text-sm font-medium text-white transition-colors"
+            className="inline-flex items-center border border-red-200 hover:bg-red-50 rounded-md px-4 py-2 text-sm font-medium text-red-600 transition-colors"
           >
             <Download className="w-4 h-4 mr-2" />
             DOWNLOAD
           </a>
           <Button 
             variant="outline" 
-            className={`border-gray-700 hover:bg-gray-800 ${isLiked ? 'bg-red-900/50' : ''} text-white`}
+            className={`border-red-200 hover:bg-red-50 ${isLiked ? 'bg-red-50' : ''} text-red-600`}
             onClick={handleLikeClick}
           >
             <Heart className={`w-4 h-4 mr-2 ${isLiked ? 'fill-red-500 text-red-500' : ''}`} />
@@ -97,8 +97,8 @@ export default function ImageModal({ imageId }: ImageModalProps) {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 overflow-hidden relative">
+      {/* Main Content - Màu nền #fff2d7 */}
+      <div className="flex-1 overflow-hidden relative bg-[#fff2d7]">
         <div className="relative w-full h-full">
           <Image
             src={image.image || "/placeholder.svg"}
@@ -109,35 +109,42 @@ export default function ImageModal({ imageId }: ImageModalProps) {
           />
         </div>
         
-        {/* Previous Button */}
+        {/* Navigation buttons */}
         {imagesToNavigate.length > 1 && (
           <button 
             onClick={handlePrevious} 
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 rounded-full hover:bg-white/40 transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-red-600/20 rounded-full hover:bg-red-600/40 transition-colors z-10"
           >
             <Image src="/assets/Setting2.png" alt="Previous" width={24} height={24} /> 
           </button>
         )}
 
-        {/* Next Button */}
         {imagesToNavigate.length > 1 && (
           <button 
             onClick={handleNext} 
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 rounded-full hover:bg-white/40 transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-red-600/20 rounded-full hover:bg-red-600/40 transition-colors z-10"
           >
             <Image src="/assets/Setting2.png" alt="Next" width={24} height={24} className="scale-x-[-1]" /> 
           </button>
         )}
       </div>
 
-      {/* Footer */}
-      <div className="bg-black/50 backdrop-blur-sm border-t border-gray-800 p-4">
+      {/* Footer - Màu nền trắng */}
+      <div className="bg-white p-4 border-t border-red-200">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-full bg-gray-800 flex-shrink-0"></div>
+            <div className="relative w-12 h-12 flex-shrink-0">
+              <Image
+                src="/assets/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                style={{ scale: 2.2 }}
+              />
+            </div>
             <div>
-              <h3 className="text-sm font-medium text-white">{image.title}</h3>
-              <p className="text-sm text-gray-400 mt-1">{image.description}</p>
+              <h3 className="text-sm font-medium text-red-600">{image.title}</h3>
+              <p className="text-sm text-gray-600 mt-1">{image.description}</p>
               <div className="flex items-center space-x-4 mt-4">
                 <span className="text-xs text-gray-500">{image.category}</span>
                 <span className="text-xs text-gray-500">•</span>

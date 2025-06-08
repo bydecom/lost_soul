@@ -9,7 +9,7 @@ import ContactSection from "@/components/sections/ContactSection"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
       <HeroSection />
       <FeatureSection 
         title="Đánh thức linh hồn lạc lối"

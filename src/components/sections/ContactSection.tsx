@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function ContactSection() {
   return (
-    <section className="py-16 px-4 bg-[#fff2d7]">
+    <section className="py-16 px-4 bg-[#fff2d7] overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Contact Form */}

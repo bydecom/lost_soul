@@ -48,7 +48,7 @@ export default function BookFlip() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 p-4 w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#fff2d7] p-4 w-full">
       {/* Download Button */}
       <div className="w-full flex justify-center">
         <a
@@ -63,7 +63,7 @@ export default function BookFlip() {
         {/* Nút Previous */}
         <button
           onClick={handlePrevPage}
-          className="absolute left-[-65px] z-1 bg-white/10 hover:bg-white/20 text-white px-4 py-8 rounded-l-lg transition-colors"
+          className="absolute left-[-65px] z-1 bg-red-600/10 hover:bg-red-600/20 text-red-600 px-4 py-8 rounded-l-lg transition-colors"
           aria-label="Previous page"
         >
           <svg
@@ -127,7 +127,7 @@ export default function BookFlip() {
         {/* Nút Next */}
         <button
           onClick={handleNextPage}
-          className="absolute right-[-65px] z-1 bg-white/10 hover:bg-white/20 text-white px-4 py-8 rounded-r-lg transition-colors"
+          className="absolute right-[-65px] z-1 bg-red-600/10 hover:bg-red-600/20 text-red-600 px-4 py-8 rounded-r-lg transition-colors"
           aria-label="Next page"
         >
           <svg

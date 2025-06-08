@@ -22,7 +22,7 @@ export default function WishlistSection() {
   };
 
   return (
-    <section className="relative">
+    <section className="relative overflow-x-hidden">
       <hr className="border-t-2 border-red-200" />
       <div className="py-24 px-4 bg-[#fff2d7]">
         <div className="max-w-4xl mx-auto text-center">

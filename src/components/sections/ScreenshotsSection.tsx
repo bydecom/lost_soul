@@ -50,7 +50,7 @@ export default function ScreenshotsSection() {
   };
 
   return (
-    <section className="py-24 px-4 bg-[#fff2d7]">
+    <section className="py-24 px-4 bg-[#fff2d7] overflow-x-hidden">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-amber-800">SCREENSHOTS</h2>
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 md:gap-6">

@@ -20,7 +20,7 @@ export default function FeatureSection({
   bgGradient = "bg-[#fff2d7]"
 }: FeatureSectionProps) {
   return (
-    <section className={`py-24 ${bgGradient}`}>
+    <section className={`py-24 ${bgGradient} overflow-x-hidden`}>
       <div className="container mx-auto px-4">
         <div className={`max-w-6xl mx-auto grid gap-12 lg:gap-16 items-center ${imageOnLeft ? "md:grid-cols-[3fr_1fr]" : "md:grid-cols-[2fr_2fr]"}`}>
           <div className={imageOnLeft ? "order-1" : "order-2 md:order-1"}>

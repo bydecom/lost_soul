@@ -17,33 +17,34 @@ const characters: Character[] = [
     name: 'BÉ HOA', 
     src: '/assets/characters/bé Hoa.png',
     age: '8 tuổi',
-    height: '1m30',
-    personality: 'Hồn nhiên, vui vẻ, thích khám phá',
-    appearance: 'Tóc đen buộc 2 bên, mặc váy màu hồng, hay cười'
-  },
-  { 
-    name: 'BỐ ĐĂNG', 
-    src: '/assets/characters/bố Đăng.png',
-    age: '45 tuổi',
-    height: '1m75',
-    personality: 'Nghiêm nghị, yêu thương gia đình',
-    appearance: 'Tóc đen ngắn, mặc áo sơ mi, dáng người cao'
+    height: '1m34',
+    personality: 'Hồn nhiên, tinh nghịch, đáng yêu, không ngại bày tỏ yêu thương với gia đình',
+    appearance: 'Nhỏ nhắn, đáng yêu, tay đeo vòng cẩm thạch, tóc ngắn'
   },
   { 
     name: 'ĐĂNG', 
     src: '/assets/characters/Đăng.png',
-    age: '12 tuổi',
-    height: '1m45',
-    personality: 'Thông minh, dũng cảm, có trách nhiệm',
-    appearance: 'Tóc đen, mặc áo phông và quần jean'
+    age: '17 tuổi',
+    height: '1m71',
+    personality: 'Cứng đầu, cáu gắt, khó chịu, nhưng bên trong là người dễ bị lay động, không giỏi bày tỏ cảm xúc',
+    appearance: 'Cao gầy, da nhợt nhạt, quần thâm, mặt hốc hác'
   },
+  { 
+    name: 'CHA ĐĂNG', 
+    src: '/assets/characters/bố Đăng.png',
+    age: '52 tuổi',
+    height: '1m78',
+    personality: 'Thô lỗ cọc cằn, thường xuyên uống rượu bia, tính cách khó chịu',
+    appearance: 'To con, đeo kính, luôn ăn mặc chỉn chu lịch sự, có phần cầu kỳ'
+  },
+
   { 
     name: 'DÌ LIỄU', 
     src: '/assets/characters/dì Liễu.png',
-    age: '40 tuổi',
-    height: '1m65',
-    personality: 'Bí ẩn, khó đoán, thông thái',
-    appearance: 'Tóc đen dài, mặc áo dài truyền thống'
+    age: '36 tuổi',
+    height: '1m66',
+    personality: 'Khó chiều, hống hách, thô lỗ, ganh tị',
+    appearance: 'Xinh đẹp, kiêu kỳ, mang theo nét đọc ác ẩn sau vẻ ngoài quyến rũ'
   },
   { 
     name: 'MẸ ĐĂNG', 
@@ -51,7 +52,7 @@ const characters: Character[] = [
     age: '42 tuổi',
     height: '1m65',
     personality: 'Dịu dàng, chu đáo, yêu thương con cái',
-    appearance: 'Tóc đen dài, mặc váy dài thanh lịch'
+    appearance: 'Tóc đen dài, trang phục đơn giản, nhẹ nhàng'
   },
 ];
 
@@ -59,7 +60,7 @@ export default function CharacterProfile() {
   const [selectedCharacter, setSelectedCharacter] = useState<Character>(characters[0]);
 
   return (
-    <div className="min-h-screen bg-[#fff2d7]">
+    <div className="min-h-screen bg-[#fff2d7] overflow-x-hidden">
       {/* Header */}
       <div className="bg-[#fff2d7] border-b-2 border-amber-400">
         <div className="container mx-auto px-4 py-6">
@@ -92,11 +93,11 @@ export default function CharacterProfile() {
 
       {/* Profile Content - Layout giống hình mẫu */}
       <div className="container mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left side - Character Image */}
-            <div className="bg-gradient-to-b from-yellow-100 to-amber-100 p-8 flex flex-col items-center justify-center">
-              <div className="relative w-[300px] h-[400px] mb-6">
+            <div className="bg-white p-8 flex flex-col items-center justify-center">
+              <div className="relative w-[400px] h-[500px] mb-6">
                 <Image
                   src={selectedCharacter.src}
                   alt={selectedCharacter.name}
