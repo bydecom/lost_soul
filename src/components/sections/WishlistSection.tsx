@@ -40,18 +40,21 @@ export default function WishlistSection() {
 
               {/* Email Form */}
               <div className="max-w-md mx-auto">
-                <form onSubmit={handleSubscribe} className="flex gap-4 h-14">
+                <form
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col sm:flex-row gap-4 w-full"
+                >
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Nhập email của bạn"
-                    className="flex-1 px-6 rounded-full bg-white border-2 border-red-500 focus:outline-none focus:border-red-600 text-gray-800 placeholder:text-gray-400"
+                    className="flex-1 px-6 py-3 rounded-full bg-white border-2 border-red-500 focus:outline-none focus:border-red-600 text-gray-800 placeholder:text-gray-400"
                   />
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-32 h-full bg-red-600 text-white rounded-full hover:bg-red-700 font-medium"
+                    className="w-full sm:w-32 h-12 sm:h-full bg-red-600 text-white rounded-full hover:bg-red-700 font-medium"
                   >
                     {isLoading ? 'Đang gửi...' : 'Đăng ký'}
                   </Button>

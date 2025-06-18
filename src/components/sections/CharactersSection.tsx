@@ -97,7 +97,9 @@ export default function CharacterProfile() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left side - Character Image */}
             <div className="bg-white p-8 flex flex-col items-center justify-center">
-              <div className="relative w-[400px] h-[500px] mb-6">
+              <div
+                className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[400px] h-72 sm:h-96 md:h-[500px] mb-6"
+              >
                 <Image
                   src={selectedCharacter.src}
                   alt={selectedCharacter.name}

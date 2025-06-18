@@ -53,10 +53,12 @@ export default function ScreenshotsSection() {
     <section className="py-24 px-4 bg-[#fff2d7] overflow-x-hidden">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-amber-800">SCREENSHOTS</h2>
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 md:gap-6">
+        <div
+          className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6"
+        >
           {/* Left Button */}
           <button
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200 hover:text-amber-900 transition-colors duration-200"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200 hover:text-amber-900 transition-colors duration-200 mb-4 md:mb-0"
             onClick={handlePrev}
             aria-label="Previous screenshot"
           >
@@ -71,7 +73,7 @@ export default function ScreenshotsSection() {
           </button>
 
           {/* Screenshots Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 flex-grow">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full">
             {displayedScreenshots.map((screenshot) => (
               <Link key={screenshot.id} href={`/gallery/${screenshot.id}?category=${screenshot.category}`}>
                 <div className="relative group cursor-pointer overflow-hidden rounded-lg">
@@ -94,7 +96,7 @@ export default function ScreenshotsSection() {
 
           {/* Right Button */}
           <button
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200 hover:text-amber-900 transition-colors duration-200"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200 hover:text-amber-900 transition-colors duration-200 mt-4 md:mt-0"
             onClick={handleNext}
             aria-label="Next screenshot"
           >
