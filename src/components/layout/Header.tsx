@@ -1,15 +1,38 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY
+      if (currentScroll > lastScrollY.current && currentScroll > 50) {
+        // scrolling down
+        setIsVisible(false)
+      } else {
+        // scrolling up
+        setIsVisible(true)
+      }
+      lastScrollY.current = currentScroll
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent md:top-5">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-transparent transition-transform duration-300 ${
+        isVisible || isOpen ? "translate-y-0" : "-translate-y-[110%]"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

@@ -6,10 +6,9 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-red-500">About Awakening Lost Soul</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-red-500">About Awakening - Lost Soul</h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            A dark fantasy action RPG where every choice shapes your destiny. Explore a world torn between light and darkness,
-            where ancient magic and modern technology collide.
+            A 2D psychological adventure game set in nostalgic old Saigon. Through emotionally charged memories and haunting environments, you follow Đăng’s journey to reclaim forgotten truths, confront trauma, and heal from the pain of family violence.
           </p>
         </div>
       </section>
@@ -18,35 +17,43 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-gray-900/50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-red-400">Epic Story</h3>
+            <h3 className="text-xl font-bold mb-4 text-red-400">Narrative Healing</h3>
             <p className="text-gray-300">
-              Immerse yourself in a rich narrative where your choices matter and multiple endings await.
+              Uncover painful yet tender memories through Đăng’s forgotten diary, as he pieces together the truth behind his sister’s tragic fate.
             </p>
           </div>
           <div className="bg-gray-900/50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-red-400">Deep Combat</h3>
+            <h3 className="text-xl font-bold mb-4 text-red-400">Emotional Puzzle Adventure</h3>
             <p className="text-gray-300">
-              Master fluid combat mechanics with a variety of weapons and magical abilities.
+              Solve narrative-driven puzzles, explore meaningful spaces, and navigate the psychological landscape of grief and trauma.
             </p>
           </div>
           <div className="bg-gray-900/50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-red-400">Beautiful World</h3>
+            <h3 className="text-xl font-bold mb-4 text-red-400">Illustrated Saigon</h3>
             <p className="text-gray-300">
-              Explore stunning environments with dynamic weather and day/night cycles.
+              Wander through hand-drawn, emotionally symbolic backdrops inspired by the nostalgic charm of old Saigon’s alleys, bookstores, and street vendors.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Core Values Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 text-red-400">Core Values</h2>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            <strong>Awakening - Lost Soul</strong> is more than a game — it's a message. It reflects the emotional scars of childhood trauma, elevates awareness of mental health, and honors family bonds. We believe in the healing power of empathy, and storytelling as a tool for social change.
+          </p>
+        </div>
+      </section>
+
       {/* Development Team */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-12 text-center">The Team</h2>
-        <div className="grid md:grid-cols-4 gap-8">
+        <h2 className="text-3xl font-bold mb-12 text-center">Our Team</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {[
-            { name: "Alex Chen", role: "Game Director", image: "/team/director.jpg" },
-            { name: "Sarah Williams", role: "Lead Artist", image: "/team/artist.jpg" },
-            { name: "Mike Johnson", role: "Lead Developer", image: "/team/developer.jpg" },
-            { name: "Emma Davis", role: "Sound Designer", image: "/team/sound.jpg" },
+            { name: "Thái Minh Bằng", role: "Developer", image: "/assets/bang.jpg" },
+            { name: "Phan Thị Mẫn", role: "Game Designer", image: "/assets/man.jpg" },
           ].map((member) => (
             <div key={member.name} className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4">
@@ -69,7 +76,7 @@ export default function AboutPage() {
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
           <p className="text-gray-300 mb-8">
-            Have questions about Awakening Lost Soul? We'd love to hear from you!
+            Have questions about Awakening - Lost Soul? We'd love to hear from you!
           </p>
           <a
             href="mailto:contact@awakeninglostsoul.com"
@@ -81,4 +88,4 @@ export default function AboutPage() {
       </section>
     </main>
   )
-} 
+}
