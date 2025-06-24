@@ -132,6 +132,19 @@ textarea,
   cursor: text !important;
 }
 
+/* Ensure custom cursor on pointer elements */
+button,
+a,
+label,
+select,
+option,
+.cursor-pointer,
+*:hover,
+*:focus,
+*:active {
+  cursor: url('/assets/chuot32x32.png'), pointer !important;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
