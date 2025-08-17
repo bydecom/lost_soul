@@ -9,6 +9,15 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Awakening Lost Soul",
   description: "An epic journey through a mysterious world filled with ancient secrets and powerful magic",
+  icons: {
+    icon: [
+      { url: "/assets/logo_crop.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/logo_crop.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/logo_crop.png", sizes: "96x96", type: "image/png" }
+    ],
+    shortcut: "/assets/logo_crop.png",
+    apple: { url: "/assets/logo_crop.png", sizes: "180x180" },
+  },
 }
 
 export default function RootLayout({

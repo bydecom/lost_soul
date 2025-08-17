@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Youtube, Instagram } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -6,7 +7,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <div className="w-6 h-6 bg-red-600 rounded"></div>
+            <Image
+              src="/assets/logoman-02.png"
+              alt="Manax Studio Logo"
+              width={24}
+              height={24}
+              className="w-12 h-12"
+            />
             <p className="text-red-600 text-2xl font-bold">Manax Studio</p>
           </div>
           <div className="flex space-x-4">
